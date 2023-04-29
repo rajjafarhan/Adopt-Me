@@ -30,15 +30,12 @@
 //   return [breedList, status];
 // }
 
-
-
-
 /////extracting breed list by react query,see fetch breed list file and search param
 
 import { useQuery } from "@tanstack/react-query";
 import fetchBreedList from "./fetchBreedList";
 
-export default function useBreedList(animal){
-  const results =useQuery(['breeds',animal],fetchBreedList);
-  return [results?.data?.breeds?? [],results.status]
+export default function useBreedList(animal) {
+  const results = useQuery(["breeds", animal], fetchBreedList);
+  return [results?.data?.breeds ?? [], results.status];
 }
